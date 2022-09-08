@@ -56,9 +56,9 @@ add_custom_command(
     COMMAND
         ${CMAKE_COMMAND} -E copy
         $<TARGET_FILE:infer_squeezenet_model>
-        $<$<BOOL:${UNIX}>:${tensorflow_SOURCE_DIR}/lib/libtensorflow.so.2>
-        $<$<BOOL:${UNIX}>:${tensorflow_SOURCE_DIR}/lib/libtensorflow_framework.so.2>
-        $<$<BOOL:${UNIX}>:${tensorflow_SOURCE_DIR}/lib/DirectML.${DIRECTML_SHA}.so>
+        $<$<BOOL:${UNIX}>:${tensorflow_SOURCE_DIR}/lib/libtensorflow.so.1>
+        $<$<BOOL:${UNIX}>:${tensorflow_SOURCE_DIR}/lib/libtensorflow_framework.so.1>
+        $<$<BOOL:${UNIX}>:${tensorflow_SOURCE_DIR}/lib/libdirectml.${DIRECTML_SHA}.so>
         $<$<BOOL:${WIN32}>:${tensorflow_SOURCE_DIR}/lib/tensorflow.dll>
         $<$<BOOL:${WIN32}>:${tensorflow_SOURCE_DIR}/lib/tensorflow_framework.dll>
         $<$<BOOL:${WIN32}>:${tensorflow_SOURCE_DIR}/lib/DirectML.${DIRECTML_SHA}.dll>
@@ -68,8 +68,8 @@ add_custom_command(
     COMMAND
         ${CMAKE_COMMAND} -E tar "cfv" "${c_api_samples_full_name}" --format=zip --
         $<TARGET_FILE_NAME:infer_squeezenet_model>
-        $<$<BOOL:${UNIX}>:libtensorflow.so.2>
-        $<$<BOOL:${UNIX}>:libtensorflow_framework.so.2>
+        $<$<BOOL:${UNIX}>:libtensorflow.so.1>
+        $<$<BOOL:${UNIX}>:libtensorflow_framework.so.1>
         $<$<BOOL:${UNIX}>:libdirectml.${DIRECTML_SHA}.so>
         $<$<BOOL:${WIN32}>:tensorflow.dll>
         $<$<BOOL:${WIN32}>:tensorflow_framework.dll>

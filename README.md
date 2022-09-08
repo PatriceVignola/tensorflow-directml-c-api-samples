@@ -14,3 +14,14 @@ TensorFlow-DirectML-C-API-Samples contains samples that show how to use the Tens
 cd build
 .\infer_squeezenet_model.exe
 ```
+
+### Build and run the samples on WSL (Windows Subsystem for Linux)
+1. Install the latest version of [CMake](https://cmake.org/download/) (CMake >= 3.20 is required)
+2. Install the latest version of clang (e.g. on Ubuntu `apt update && apt install clang`)
+3. Run the following commands:
+
+```sh
+./build.sh
+cd build
+./infer_squeezenet_model
+```
